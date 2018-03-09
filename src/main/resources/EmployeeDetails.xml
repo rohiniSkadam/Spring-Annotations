@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="adrs" class="SpringExample.Address">
+        <property name="city" value="Pune"/>
+        <property name="state" value="Maharashtra"/>
+        <property name="zipcode" value="01123"/>
+    </bean>
+
+    <bean id="emp1" class="SpringExample.Employee" init-method="myinit" destroy-method="mydestroy">
+        <property name="eid" value="102"/>
+        <property name="ename" value="tom"/>
+        <property name="eaddress" value="pune"/>
+        <constructor-arg ref="adrs"/>
+    </bean>
+
+    <bean id="emp2" class="SpringExample.Employee">
+        <property name="eid" value="103"/>
+        <property name="ename" value="Jannie"/>
+        <property name="eaddress" value="Mumbai"/>
+        <constructor-arg ref="adrs"/>
+    </bean>
+
+</beans>
+
